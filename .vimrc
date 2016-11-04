@@ -48,3 +48,9 @@ let g:airline_theme='simple'
 " CtrlP Config
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
+
+set noswapfile
+set tabstop=2
+set shiftwidth=2
+set softtabstop=2
+set expandtab
