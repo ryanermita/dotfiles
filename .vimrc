@@ -2,18 +2,17 @@ syntax on
 set nocompatible
 filetype off
 
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-Plugin 'VundleVim/Vundle.vim'
-Plugin 'tpope/vim-fugitive'
-Plugin 'scrooloose/nerdtree'
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
-Plugin 'kien/ctrlp.vim'
-Plugin 'scrooloose/syntastic'
-Plugin 'roman/golden-ratio'
-Plugin 'airblade/vim-gitgutter'
-call vundle#end()
+call plug#begin('~/.vim/plugged')
+Plug 'tpope/vim-fugitive'
+Plug 'scrooloose/nerdtree'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'scrooloose/syntastic'
+Plug 'roman/golden-ratio'
+Plug 'airblade/vim-gitgutter'
+Plug 'nanotech/jellybeans.vim'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+call plug#end()
 filetype plugin indent on
 
 " General Config
@@ -26,11 +25,15 @@ nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 set encoding=utf-8
 
+" Theme
+colorscheme jellybeans
+
 " NerdTree config
 " toggle NerdTree via Ctrl + n
 map <C-n> :NERDTreeToggle<CR>
 " open nerdtree to right
 let g:NERDTreeWinPos = "right"
+let g:NERDTreeCascadeSingleChildDir = 0
 let NERDTreeIgnore = ['\.pyc$']
 
 " Syntastic Config
@@ -45,12 +48,8 @@ let g:syntastic_python_checkers = ['pyflakes', 'flake8']
 
 " Airline Config
 let g:airline_powerline_fonts=1
-let g:airline_theme='deus'
+" let g:airline_theme='deus'
 let g:Powerline_symbols='unicode'
-
-" CtrlP Config
-let g:ctrlp_map = '<c-p>'
-let g:ctrlp_cmd = 'CtrlP'
 
 set noswapfile
 set tabstop=2
