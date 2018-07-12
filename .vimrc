@@ -12,6 +12,7 @@ Plug 'roman/golden-ratio'
 Plug 'airblade/vim-gitgutter'
 Plug 'nanotech/jellybeans.vim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'kien/ctrlp.vim'
 call plug#end()
 filetype plugin indent on
 
@@ -27,6 +28,8 @@ set encoding=utf-8
 
 " Theme
 colorscheme jellybeans
+
+set tags=./tags,tags;$HOME
 
 " NerdTree config
 " toggle NerdTree via Ctrl + n
@@ -61,3 +64,5 @@ set backspace=indent,eol,start
 
 set clipboard=unnamed
 set wildignore=*.o,*~,*.pyc
+
+autocmd BufWritePre * :%s/\s\+$//e

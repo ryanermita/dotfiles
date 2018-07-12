@@ -1,0 +1,8 @@
+[user]
+	name = Ryan Ermita
+	email = <email>
+[alias]
+	st = status
+	ci = commit
+	br = branch
+	co = checkout
